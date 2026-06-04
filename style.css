@@ -1,0 +1,199 @@
+:root{
+    /*declare variables*/
+    --gradient: linear-gradient(
+        180deg,
+        rgba(45,112,1253,0.73) 0%,
+        #163e92 100%
+    );
+    --dark: black;
+    --grey: grey;
+    --grey-border: rgba(210,210,210,0.75);
+    --grey-light: #eeeeee;
+    --grey-dark: aqua;
+    --blue: blue;
+    --green: green;
+    --white: white;
+}
+
+body{
+    /*formating body*/
+   background: var(--gradient);
+   margin:0 ;
+   height: 100vh; /*vh means it gives best height according to pixels of screen*/
+   display: flex;
+   flex-direction: column; /*flex improves padding . by default it is rowwise*/
+   justify-content: space-evenly;
+   align-items: center;
+}
+
+.btn{
+    color: var(--white);
+    font-size: 1.1rem;
+    padding: 0.7rem 1.5rem; /*verticle length - horizontal length*/
+    border-radius: 0.3rem;
+    border: none;
+    background-color: var(--blue);
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    text-align: center ;
+}
+
+/*todo container*/
+
+.todo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 2rem;
+    background: var(--white);
+    padding: 3rem;
+    height: 50%;
+    width: 60%;
+    max-width: 30rem; /*see website in full screen with zoom in and out to see diference*/
+}
+
+.input{
+    position: relative;
+    display: flex;
+}
+
+.input-field {
+    width: 100%;
+    border: 0.06rem solid #d2d2d2bf   ;
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    font-size: 1rem;
+}
+
+input[type="text"]::placeholder{
+    color: var(--grey);
+}
+
+.todo-container{
+    display: flex;
+    gap: 1rem;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+    overflow-y: scroll;
+}
+
+li{
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.3rem;
+}
+
+#todoList p{/* # defines the id:todoList which is camelcased in html and p represents paragraph in that id given in javascript*/
+   display: flex;
+   gap: 1rem;
+   color: var(--dark);
+   align-items: center;
+}
+
+
+#todoList.disabled{
+    color: var(--grey);
+}
+
+.disabled{
+    display: flex;
+    text-decoration: line-through;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+input[type="checkbox"]::before{
+    content: "\2713"; /*unique code for checkmark*/
+    display: inline-block;/*adds elements in the form of blocks*/
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.7rem;
+    text-align: center;
+    border: 0.06rem solid var(--grey);
+    border-radius: 50%;
+    color: transparent;
+}
+
+
+input[type="checkbox"]:checked::before{
+    color: var(--white);
+    background-color: var(--green);
+    border: 0.06rem solid var(--green);
+    border-radius: 50%;
+}
+
+.counter{
+        border: 0.06rem solid var(--grey-light);
+}
+
+.counter-container{
+    height: 2rem;
+    color: var(--grey);
+    display: flex;
+    justify-content: space-between ;
+}
+
+.counter-container p{
+    align-self: center;
+}
+
+.counter-container button {
+    border: none;
+    background-color: transparent;
+    color: var(--grey);
+    font-size: 1rem;
+}
+
+.footer{
+    display: flex;
+    gap: 1.8rem;
+    background-color: var(--white);
+    padding: 1.3rem;
+    border-radius: 0.5rem;
+}
+
+.made-by ,
+.author{
+    font-size: 0.9rem;
+}
+
+.made-by{
+    color: var(--grey-border);
+}
+
+.author{
+    color: var(--blue);
+    font-weight: bold;
+}
+
+.scroll{
+    height: 15rem;
+    scrollbar-width: thin;
+}
+
+.scroll::-webkit-scrollbar{/*ensures it looks good across all browsers*/
+width: 0.6rem;
+}
+
+.scroll::-webkit-scrollbar-thumb{
+    background-color: var(--blue);
+    border-radius: 0.5rem;
+}
+
+.scroll::-webkit-scrollbar-track{
+   display: none;
+}
